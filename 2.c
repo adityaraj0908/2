@@ -10,17 +10,20 @@ scanf("%s",pattern);
 fp=fopen(filename,"r");  
 if(fp==NULL) 
 { 
+  printf("\n Error opening file.\n"); 
+  return 1;
 } 
-printf("\n Error opening file.\n"); 
-return 1; 
+
 while(!feof(fp)) 
 { 
-}  
-fgets(temp,sizeof(temp),fp); 
-if(strstr(temp,pattern)) 
-{ 
+  fgets(temp,sizeof(temp),fp); 
+  if(strstr(temp,pattern)) 
+
+{
+  printf("%s",temp); 
 } 
-printf("%s",temp); 
+}  
+ 
 fclose(fp); 
 return 0; 
 } 
